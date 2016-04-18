@@ -8,4 +8,10 @@ export class App {
         {firstName: 'John', lastName: 'Doe'},
         {firstName: 'Joe', lastName: 'Bloggs'},
     ];
+    
+    @bindable() selectedPerson: Person;
+    
+    selectedPersonChanged(person) {
+        alert(`${person.firstName} ${person.lastName} selected`);
+    }
 }
