@@ -1,0 +1,8 @@
+<template>
+    <ul class="list-group">
+        <li class="list-group-item" repeat.for="person of people">
+            ${person.firstName} ${person.lastName}
+            <button class="btn">Select</button>
+        </li>
+    </ul>
+</template>
