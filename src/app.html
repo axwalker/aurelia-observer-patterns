@@ -1,7 +1,7 @@
 <template>
     <require from="person-list"></require>
-  
+
     <div class="container">
-        <person-list people.bind="people"></person-list>
+        <person-list people.bind="people" select-person-callback.call="selectPerson($event)"></person-list>
     </div>
 </template>
