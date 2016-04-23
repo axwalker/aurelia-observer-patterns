@@ -1,6 +1,6 @@
 import {Person} from './person';
 import {SelectedPersonHolder} from './SelectedPersonHolder';
-import {autoinject} from 'aurelia-framework';
+import {autoinject, BindingEngine, Disposable} from 'aurelia-framework';
 
 @autoinject
 export class App {
@@ -8,8 +8,16 @@ export class App {
         {firstName: 'John', lastName: 'Doe'},
         {firstName: 'Joe', lastName: 'Bloggs'},
     ];
+    observerDisposer: Disposable;
 
-    constructor(private selectedPersonHolder: SelectedPersonHolder) {
+    constructor(private selectedPersonHolder: SelectedPersonHolder, private bindingEngine: BindingEngine) {
+      this.observerDisposer = this.bindingEngine.propertyObserver(this.selectedPersonHolder, "person")
+      .subscribe((person: Person, oldValue: Person) => {
+        alert(`${person.firstName} ${person.lastName} selected`);
+      });
     }
 
+    deactivate() {
+      this.observerDisposer.dispose();
+    }
 }
