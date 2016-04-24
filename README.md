@@ -1,4 +1,6 @@
-# aurelia-skeleton-typescript-webpack
+# Aurelia observer patterns
+
+Examples of observer patterns in Aurelia - each branch contains a different pattern to solve a simple problem. For more explanations, see [this wiki page](https://github.com/axwalker/aurelia-observer-patterns/wiki/Observer-patterns-in-Aurelia)
 
 ## Getting started
 
