@@ -1,6 +1,7 @@
 <template>
     <require from="person-list"></require>
-  
+
+    selected: ${selectedPersonHolder.person.firstName} ${selectedPersonHolder.person.lastName}
     <div class="container">
         <person-list people.bind="people"></person-list>
     </div>
